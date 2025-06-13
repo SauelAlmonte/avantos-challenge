@@ -1,0 +1,11 @@
+{
+  "name": "frontendchallengeserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

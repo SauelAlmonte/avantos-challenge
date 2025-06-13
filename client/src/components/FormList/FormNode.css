@@ -1,0 +1,106 @@
+/* === Container Styles === */
+.form-container {
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* === Toggleable Header === */
+.form-header {
+    padding: 1.5rem;
+    cursor: pointer;
+    background-color: #f0f4f8;
+    font-size: var(--font-size-h3);
+    font-weight: 600;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    user-select: none;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.form-toggle {
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--font-size-h3);
+}
+
+/* === Expanded Form Body === */
+.form-node {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+/* === Prefill Field Block === */
+.form-field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    background-color: #f5f7fa;
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--color-border);
+    font-size: var(--font-size-base);
+}
+
+/* === Prefill Status Labels === */
+.configured {
+    color: var(--color-success);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.not-configured {
+    color: var(--color-error);
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* === Prefill Button Styling === */
+.form-field button {
+    font-size: var(--font-size-caption);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: var(--color-secondary);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.form-field button:hover:not(:disabled) {
+    background-color: var(--color-primary-hover);
+    color: #fff;
+}
+
+/* === Disabled Button State === */
+button:disabled,
+.btn-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* === Clear Prefill (X) Button === */
+.clear-prefill {
+    background-color: transparent;
+    border: none;
+    color: var(--color-error);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s ease-in-out;
+}
+
+.clear-prefill:hover {
+    color: var(--color-error);
+}

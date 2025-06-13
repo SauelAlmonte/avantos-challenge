@@ -1,0 +1,77 @@
+/* ---------- Global Reset + Base Typography ---------- */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  font-size: 62.5%; /* 10px based on the default 16px */
+}
+
+:root {
+  /* --- Palette Color System --- */
+  --color-background: #f0f8ff;
+  --color-text-primary: #333333;
+  --color-text-secondary: #5f6b7a;
+  --color-primary: #4682b4;
+  --color-primary-hover: #6495ed;
+  --color-secondary: #d3d3d3;
+  --color-accent: #ff7f50;
+  --color-border: #dcdcdc;
+  --color-success: #3cb371;
+  --color-error: #cd5c5c;
+
+  /* --- Typography: Font Families --- */
+  --font-family-base: 'Arial', sans-serif;
+  --font-family-heading: 'Segoe UI', 'Helvetica Neue', sans-serif;
+
+  /* --- Typography: Font Sizes --- */
+  --font-size-h1: 2.8rem;      /* 28px */
+  --font-size-h2: 2.0rem;      /* 22px */
+  --font-size-h3: 1.8rem;      /* 18px */
+  --font-size-base: 1.6rem;    /* 16px */
+  --font-size-caption: 1.2rem; /* 12px */
+
+  /* --- Line Heights Mapped to Font Sizes --- */
+  --line-height-h1: 3.4rem;
+  --line-height-h2: 2.8rem;
+  --line-height-h3: 2.4rem;
+  --line-height-base: 2.4rem;
+  --line-height-caption: 1.6rem;
+
+  /* --- Letter Spacing --- */
+  --letter-spacing-h1: -0.02em;
+  --letter-spacing-h2: -0.01em;
+  --letter-spacing-h3: 0em;
+  --letter-spacing-base: 0.01em;
+  --letter-spacing-caption: 0.02em
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--color-primary-hover);
+}
