@@ -2,38 +2,37 @@
     padding: 2rem;
 }
 
-.form-list .subtitle {
+.form-list__title {
     font-size: var(--font-size-h2);
     line-height: var(--line-height-h2);
     letter-spacing: var(--letter-spacing-h2);
     margin-bottom: 1rem;
     color: var(--color-primary);
-    font-family: var(--font-family-heading);
+    font-family: var(--font-family-heading) Arial, sans-serif;
 }
 
-.form-list__count {
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    color: var(--color-text-secondary);
+.form-list__download-button {
+    font-size: var(--font-size-caption);
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
     margin-bottom: 1.5rem;
 }
 
-.form-list ul {
-    list-style-type: none;
+.form-list__download-button:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-white);
+}
+
+.form-list__items {
+    list-style: none;
     padding-left: 0;
     margin-top: 1.5rem;
     margin-bottom: 2rem;
-}
-
-.form-list__item {
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    margin-bottom: 0.8rem;
-}
-
-.form-list__id {
-    color: var(--color-text-secondary);
-    margin-left: 0.5rem;
 }
 
 .form-list__error {
@@ -42,11 +41,4 @@
     font-size: var(--font-size-caption);
     line-height: var(--line-height-caption);
     margin-top: 1rem;
-}
-
-.form-list__actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-    gap: 1rem;
 }

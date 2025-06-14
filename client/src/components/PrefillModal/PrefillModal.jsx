@@ -25,7 +25,6 @@ const PrefillModal = ({ isOpen, onClose, formId, fieldKey, dependencies, onSave 
             if (!fields) return;
 
             Object.entries(fields).forEach(([key, schema]) => {
-                // Exclude invalid field types
                 if (
                     schema?.type === 'object' ||
                     schema?.avantos_type === 'button'
@@ -52,14 +51,15 @@ const PrefillModal = ({ isOpen, onClose, formId, fieldKey, dependencies, onSave 
     if (!isOpen) return null;
 
     return (
-        <div className="modal-overlay">
-            <div className="modal">
-                <h3>Set Prefill Mapping</h3>
-                <p><strong>Field:</strong> {fieldKey}</p>
+        <div className="prefill-modal__overlay">
+            <div className="prefill-modal__container">
+                <h3 className="prefill-modal__title">Set Prefill Mapping</h3>
+                <p className="prefill-modal__field-label"><strong>Field:</strong> {fieldKey}</p>
 
-                <label>
+                <label className="prefill-modal__select-label">
                     Select Source:
                     <select
+                        className="prefill-modal__select"
                         value={selectedSource}
                         onChange={(e) => setSelectedSource(e.target.value)}
                     >
@@ -72,9 +72,20 @@ const PrefillModal = ({ isOpen, onClose, formId, fieldKey, dependencies, onSave 
                     </select>
                 </label>
 
-                <div className="modal-actions">
-                    <button onClick={handleSave} disabled={!selectedSource}>Save</button>
-                    <button onClick={onClose}>Cancel</button>
+                <div className="prefill-modal__actions">
+                    <button
+                        className="prefill-modal__button prefill-modal__button--save"
+                        onClick={handleSave}
+                        disabled={!selectedSource}
+                    >
+                        Save
+                    </button>
+                    <button
+                        className="prefill-modal__button prefill-modal__button--cancel"
+                        onClick={onClose}
+                    >
+                        Cancel
+                    </button>
                 </div>
             </div>
         </div>

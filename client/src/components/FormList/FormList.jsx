@@ -26,7 +26,6 @@ const FormList = () => {
 
             const sortedNodes = topologicalSort(enrichedNodes);
 
-            // Sort alphabetically by form name after topological order is satisfied
             sortedNodes.sort((a, b) => {
                 const nameA = a.data?.name || "";
                 const nameB = b.data?.name || "";
@@ -62,7 +61,6 @@ const FormList = () => {
                 result.push(prereqNode);
             }
 
-            // Recursively collect transitive dependencies
             result = result.concat(collectDependencies(prereqId, visited));
         }
 
@@ -86,11 +84,11 @@ const FormList = () => {
 
     return (
         <section className="form-list">
-            <h2 className="subtitle">Available Forms</h2>
-            <button className="download-json" onClick={handleDownload}>
+            <h2 className="form-list__title">Available Forms</h2>
+            <button className="form-list__download-button" onClick={handleDownload}>
                 Download JSON
             </button>
-            <ul>
+            <ul className="form-list__items">
                 {nodes.map((node) => (
                     <FormNode
                         key={node.id}

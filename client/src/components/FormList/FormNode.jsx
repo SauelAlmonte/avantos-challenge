@@ -9,17 +9,16 @@ const FormNode = ({ node, onNodeUpdate, dependencies }) => {
     const toggleExpanded = () => setExpanded(prev => !prev);
 
     return (
-        <div className="form-container">
-            <div className="form-header" onClick={toggleExpanded}>
-                <span className="form-toggle">
+        <div className="form-node">
+            <div className="form-node__header" onClick={toggleExpanded}>
+                <span className="form-node__toggle">
                     {expanded ? '▼' : '▶'} {node.data.name}
                 </span>
             </div>
 
             {expanded && (
-                <div className="form-node">
+                <div className="form-node__fields">
                     {Object.entries(node.data?.field_schema?.properties || {}).map(([fieldKey, schema]) => {
-                        // Skip unsupported field types
                         if (
                             schema?.avantos_type === 'button' ||
                             schema?.type === 'object'
@@ -29,18 +28,21 @@ const FormNode = ({ node, onNodeUpdate, dependencies }) => {
                         const label = config?.prefill ? config.prefill : 'Not configured';
 
                         return (
-                            <div className="form-field" key={fieldKey}>
-                                <strong>{fieldKey}:</strong>
-                                <span className={config?.prefill ? 'configured' : 'not-configured'}>
+                            <div className="form-node__field" key={fieldKey}>
+                                <strong className="form-node__label">{fieldKey}:</strong>
+                                <span className={`form-node__value${config?.prefill ? ' form-node__value--configured' : ' form-node__value--not-configured'}`}>
                                     {label}
                                 </span>
-                                <button onClick={() => setShowPrefill(fieldKey)}>
+                                <button
+                                    className="form-node__button"
+                                    onClick={() => setShowPrefill(fieldKey)}
+                                >
                                     {config?.prefill ? 'Edit Prefill' : 'Set Prefill'}
                                 </button>
 
                                 {config?.prefill && (
                                     <button
-                                        className="clear-prefill"
+                                        className="form-node__clear"
                                         onClick={() => {
                                             const updatedConfig = { ...node.data.dynamic_field_config };
                                             delete updatedConfig[fieldKey];

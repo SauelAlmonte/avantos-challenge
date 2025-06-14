@@ -1,75 +1,87 @@
-.modal-overlay {
+.prefill-modal__overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--color-overlay-backdrop);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
 }
 
-.modal {
-    background-color: #fff;
+.prefill-modal__container {
+    background-color: var(--color-background);
     padding: 2rem;
     border-radius: 6px;
     width: 90%;
-    max-width: 420px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 42rem;
+    box-shadow: var(--box-shadow-modal);
 }
 
-.modal h3 {
+.prefill-modal__title {
     margin-bottom: 1.6rem;
-    font-size: 1.8rem;
-    font-family: var(--font-heading);
+    font-size: var(--font-size-h3);
+    font-family: var(--font-family-heading) Arial, sans-serif;
+    line-height: var(--line-height-h3);
+    letter-spacing: var(--letter-spacing-h3);
+    color: var(--color-text-primary);
 }
 
-.modal label {
+.prefill-modal__field-label {
+    margin-bottom: 1.2rem;
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-heading) Arial, sans-serif;
+    color: var(--color-text-primary);
+    line-height: var(--line-height-base);
+}
+
+.prefill-modal__select-label {
     display: block;
-    font-size: 1.4rem;
+    font-size: var(--font-size-base);
     margin-bottom: 0.5rem;
     color: var(--color-text-secondary);
 }
 
-.modal select {
+.prefill-modal__select {
     width: 100%;
     padding: 0.6rem;
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
+    font-size: var(--font-size-base);
     border: 1px solid var(--color-border);
     border-radius: 4px;
-    background-color: #f9f9f9;
+    background-color: var(--color-secondary);
+    color: var(--color-text-primary);
+    margin-bottom: 2rem;
 }
 
-.modal-actions {
+.prefill-modal__actions {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
 }
 
-.modal-actions button {
+.prefill-modal__button {
     padding: 0.8rem 1.4rem;
-    font-size: 1.2rem;
+    font-size: var(--font-size-caption);
+    font-family: inherit;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-family: inherit;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease-in-out;
 }
 
-.modal-actions .cancel {
+.prefill-modal__button--cancel {
     background-color: var(--color-secondary);
-    color: #333;
+    color: var(--color-text-primary);
 }
 
-.modal-actions .save {
+.prefill-modal__button--cancel:hover {
+    background-color: var(--color-secondary-hover);
+}
+
+.prefill-modal__button--save {
     background-color: var(--color-primary);
-    color: #fff;
+    color: var(--color-white);
 }
 
-.modal-actions .cancel:hover {
-    background-color: #c0c0c0;
-}
-
-.modal-actions .save:hover {
+.prefill-modal__button--save:hover {
     background-color: var(--color-primary-hover);
 }

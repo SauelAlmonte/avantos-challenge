@@ -29,6 +29,11 @@ body {
   --color-border: #dcdcdc;
   --color-success: #3cb371;
   --color-error: #cd5c5c;
+  --color-overlay-backdrop: rgba(0, 0, 0, 0.4);
+  --color-white: #ffffff;
+  --color-secondary-hover: #c0c0c0;
+  --box-shadow-modal: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   /* --- Typography: Font Families --- */
   --font-family-base: 'Arial', sans-serif;
